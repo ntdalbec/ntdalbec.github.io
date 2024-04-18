@@ -1,0 +1,11 @@
+/* blog type scale (1.125 - Major Second) */
+main {
+    --type-scale-1: 2.027rem;
+    --type-scale-2: 1.802rem;
+    --type-scale-3: 1.602rem;
+    --type-scale-4: 1.424rem;
+    --type-scale-5: 1.266rem;
+    --type-scale-6: 1.125rem;
+    --type-scale-small: 0.889rem;
+    --type-scale-fine-print: 0.79rem;
+}

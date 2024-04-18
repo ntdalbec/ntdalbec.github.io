@@ -1,40 +1,47 @@
 /* Defaults */
 :root {
-	--font-family: -apple-system, system-ui, sans-serif;
-	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+	--font-family-body: "Roboto", sans-serif;
+	--font-family-display: "Playfair Display", serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
+		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
+		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
+		Courier, monospace;
 }
 
 /* Theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #C0C0C0;
-	--color-gray-90: #333;
+	--color-gray-10: #ebf2f1;
+	--color-gray-90: #000d0b;
 
-	--background-color: #fff;
+	--color-primary-30: #91f2e5;
+	--color-primary-40: #45ccba;
+	--color-primary-70: #0f665a;
+
+	--color-secondary-40: #77d998;
+
+	--color-action-40: #e6b85c;
+
+	--background-color: var(--color-gray-10);
 
 	--text-color: var(--color-gray-90);
 	--text-color-link: #082840;
 	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050F;
+	--text-color-link-visited: #17050f;
 
 	--syntax-tab-size: 2;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #C0C0C0;
-		--color-gray-90: #dad8d8;
-
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
-
-		--background-color: #15202b;
-	}
+/* Default Type Scale (1.250 - Major Third) */
+:root {
+	--type-scale-1: 3.815rem;
+	--type-scale-2: 3.052rem;
+	--type-scale-3: 2.441rem;
+	--type-scale-4: 1.953rem;
+	--type-scale-5: 1.563rem;
+	--type-scale-6: 1.25rem;
+	--type-scale-small: 0.8rem;
+	--type-scale-fine-print: 0.64rem;
 }
-
 
 /* Global stylesheet */
 * {
@@ -45,7 +52,7 @@ html,
 body {
 	padding: 0;
 	margin: 0 auto;
-	font-family: var(--font-family);
+	font-family: var(--font-family-body);
 	color: var(--text-color);
 	background-color: var(--background-color);
 }
@@ -54,6 +61,10 @@ html {
 }
 body {
 	max-width: 40em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-family-display);
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -97,7 +108,7 @@ main :first-child {
 }
 
 header {
-	border-bottom: 1px dashed var(--color-gray-20);
+	border-bottom: 1px dashed var(--color-gray-10);
 }
 header:after {
 	content: "";
@@ -107,7 +118,7 @@ header:after {
 
 .links-nextprev {
 	list-style: none;
-	border-top: 1px dashed var(--color-gray-20);
+	border-top: 1px dashed var(--color-gray-10);
 	padding: 1em 0;
 }
 
@@ -124,7 +135,7 @@ code {
 	font-family: var(--font-family-monospace);
 }
 pre:not([class*="language-"]) {
-	margin: .5em 0;
+	margin: 0.5em 0;
 	line-height: 1.375; /* 22px /16 */
 	-moz-tab-size: var(--syntax-tab-size);
 	-o-tab-size: var(--syntax-tab-size);
@@ -142,15 +153,42 @@ code {
 	word-break: break-all;
 }
 
+/* type scale */
+h1 {
+	font-size: var(--type-scale-1);
+}
+h2 {
+	font-size: var(--type-scale-2);
+}
+h3 {
+	font-size: var(--type-scale-3);
+}
+h4 {
+	font-size: var(--type-scale-4);
+}
+h5 {
+	font-size: var(--type-scale-5);
+}
+h6 {
+	font-size: var(--type-scale-6);
+}
+.small {
+	font-size: var(--type-scale-small);
+}
+.fine-print {
+	font-size: var(--type-scale-fine-print);
+}
+
 /* Header */
 header {
 	display: flex;
-	gap: 1em .5em;
+	gap: 1em 0.5em;
 	flex-wrap: wrap;
 	align-items: center;
 	padding: 1em;
 }
 .home-link {
+	font-family: var(--font-family-display);
 	font-size: 1em; /* 16px /16 */
 	font-weight: 700;
 	margin-right: 2em;
@@ -210,8 +248,8 @@ header {
 	font-size: 1.1875em; /* 19px /16 */
 	font-weight: 700;
 	flex-basis: calc(100% - 1.5rem);
-	padding-left: .25em;
-	padding-right: .5em;
+	padding-left: 0.25em;
+	padding-right: 0.5em;
 	text-underline-position: from-font;
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
@@ -236,7 +274,7 @@ header {
 .post-metadata {
 	display: inline-flex;
 	flex-wrap: wrap;
-	gap: .5em;
+	gap: 0.5em;
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -250,7 +288,7 @@ header {
 	text-decoration: none;
 	font-style: normal;
 	font-size: 1em;
-	margin-left: .1em;
+	margin-left: 0.1em;
 }
 a[href].header-anchor,
 a[href].header-anchor:visited {
