@@ -11,6 +11,22 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
 
+		{#- Open Graph and Twitter card support #}
+		<meta property="og:title" content="{{ title or metadata.title }}">
+		<meta property="og:description" content="{{ description or metadata.description }}">
+		<meta property="og:url" content="{{ url | htmlBaseUrl }}">
+		<meta property="og:site_name" content="{{ metadata.title }}">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="{{ metadata.url }}/public/images/og-image.jpg">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="{{ title or metadata.title }}">
+		<meta name="twitter:description" content="{{ description or metadata.description }}">
+		<meta name="twitter:image" content="{{ metadata.url }}/public/images/og-image.jpg">
+
+		{#- Favicon support #}
+		<link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/public/images/favicon.svg" type="image/svg+xml">
+
 		{#- Font imports #}
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
