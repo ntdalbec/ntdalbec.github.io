@@ -96,17 +96,10 @@ module.exports = function(eleventyConfig) {
 		return (new Date()).toISOString();
 	})
 
-	// Features to make your build faster (when you need them)
-
-	// If your passthrough copy gets heavy and cumbersome, add this line
-	// to emulate the file copy on the dev server. Learn more:
-	// https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
-
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
 	return {
 		// Control which files Eleventy will process
-		// e.g.: *.md, *.njk, *.html, *.liquid
 		templateFormats: [
 			"md",
 			"njk",
@@ -114,10 +107,10 @@ module.exports = function(eleventyConfig) {
 			"liquid",
 		],
 
-		// Pre-process *.md files with: (default: `liquid`)
+		// Pre-process *.md files with nunjucks
 		markdownTemplateEngine: "njk",
 
-		// Pre-process *.html files with: (default: `liquid`)
+		// Pre-process *.html files with nunjucks
 		htmlTemplateEngine: "njk",
 
 		// These are all optional:
@@ -128,16 +121,6 @@ module.exports = function(eleventyConfig) {
 			output: "_site"
 		},
 
-		// -----------------------------------------------------------------
-		// Optional items:
-		// -----------------------------------------------------------------
-
-		// If your site deploys to a subdirectory, change `pathPrefix`.
-		// Read more: https://www.11ty.dev/docs/config/#deploy-to-a-subdirectory-with-a-path-prefix
-
-		// When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
-		// it will transform any absolute URLs in your HTML to include this
-		// folder name and does **not** affect where things go in the output folder.
 		pathPrefix: "/",
 	};
 };
