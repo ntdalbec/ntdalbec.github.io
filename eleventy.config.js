@@ -41,8 +41,10 @@ module.exports = function(eleventyConfig) {
 	// Third-party plugins
 	eleventyConfig.addPlugin(rollupPlugin, {
 		rollupOptions: {
-			format: "es",
-			dir: "_site/js",
+			output: {
+				format: "es",
+				dir: "_site/js",
+			}
 		}
 	});
 

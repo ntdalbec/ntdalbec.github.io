@@ -59,12 +59,9 @@ body {
 	color: var(--text-color);
 	background-color: var(--background-color);
 }
-html {
-	overflow-y: scroll;
-}
-main {
-	max-width: 40em;
-	margin: 0 auto;
+body {
+	display: flex;
+	flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -106,8 +103,9 @@ a[href]:active {
 
 main {
 	padding: 1rem;
+	flex-grow: 1;
 }
-main :first-child {
+main:first-child {
 	margin-top: 0;
 }
 

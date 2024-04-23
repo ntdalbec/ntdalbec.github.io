@@ -1,0 +1,71 @@
+/* landing page type scale (1.5 - Perfect Fifth) */
+main {
+    --type-scale-1: 11.391rem;
+    --type-scale-2: 7.594rem;
+    --type-scale-3: 5.063rem;
+    --type-scale-4: 3.375rem;
+    --type-scale-5: 2.25rem;
+    --type-scale-6: 1.5rem;
+    --type-scale-small: 0.667rem;
+    --type-scale-fine-print: 0.444rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.filter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+
+    background-image: url('/img/filter.png');
+    background-repeat: repeat;
+    pointer-events: none;
+}
+
+.hero {
+    margin: 0 auto;
+}
+
+.hero h1 {
+    width: 4em;
+    line-height: 1em;
+    margin: 0;
+    padding-bottom: 1rem;
+
+    --bg-size: 400%;
+    background: linear-gradient(
+        85deg,
+        var(--color-gray-10) 40%,
+        var(--color-action-40),
+        var(--color-gray-10) 60%
+        ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    animation: move-bg 16s linear infinite;
+    border-bottom: 1px solid var(--color-gray-10);
+}
+.hero h1 div:last-child {
+    text-align: right;
+}
+
+.hero > h4 {
+    font-family: var(--font-family-body);
+    width: 100%;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-gray-10);
+}
+
+@keyframes move-bg {
+    to {
+        background-position: var(--bg-size) 0;
+    }
+}

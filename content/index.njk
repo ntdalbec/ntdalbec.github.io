@@ -4,6 +4,12 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-{#- {%- css %}{% include "public/css/home.css" %}{% endcss %} -#}
+{%- css %}{% include "public/css/home.css" %}{% endcss %}
+{%- rollup "public/js/home.js" | url %}
 
-<h1>Nathan Dalbec</h1>
+<div class="hero">
+	<h1><div>Nathan</div><div>Dalbec</div></h1>
+	<h4>Creative Developer</h4>
+</div>
+
+<div class="filter"></div>
