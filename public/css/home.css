@@ -64,6 +64,17 @@ main {
     border-bottom: 1px solid var(--color-gray-10);
 }
 
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links img {
+    width: 3.75rem;
+    height: 3.75rem;
+}
+
 @keyframes move-bg {
     to {
         background-position: var(--bg-size) 0;
